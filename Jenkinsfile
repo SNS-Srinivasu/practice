@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/your-demo-repo.git'
+                git 'https://github.com/SNS-Srinivasu/practice.git'
             }
         }
 
@@ -17,7 +17,7 @@ pipeline {
                 withSonarQubeEnv("${SONARQUBE_ENV}") {
                     sh '''
                         sonar-scanner \
-                          -Dsonar.projectKey=demo-project \
+                          -Dsonar.projectKey=practice \
                           -Dsonar.sources=. \
                           -Dsonar.host.url=$SONAR_HOST_URL \
                           -Dsonar.login=$SONAR_AUTH_TOKEN
