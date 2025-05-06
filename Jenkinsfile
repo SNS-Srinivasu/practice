@@ -2,7 +2,11 @@ pipeline {
     agent any
 
     environment {
-        SONARQUBE_ENV = 'MySonarQube' // Replace with your actual SonarQube server name in Jenkins
+        SONARQUBE_ENV = 'MySonarQube' // Replace with your configured SonarQube server name
+    }
+
+    tools {
+        sonarScanner 'SonarQube' // Replace with the name you used in Global Tool Configuration
     }
 
     stages {
